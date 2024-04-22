@@ -1,16 +1,24 @@
-﻿var name = "Piotr";
-var sex = 'm';
-var age = 17;
+﻿using System.Diagnostics.Metrics;
 
-if (sex == 'k' && age < 30)
+int number = 1022557;
+string NumberToString = number.ToString();
+char[] letters = NumberToString.ToArray();
+
+char[] numbers = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+Console.WriteLine("Wyniki dla liczby " + NumberToString);
+
+foreach (char num in numbers)
 {
-    Console.WriteLine("Kobieta ponizej 30 lat");
-}
-else if (name == "Ewa" && age == 30)
-{
-    Console.WriteLine("Ewa, lat 30");
-}
-else if (sex == 'm' && age < 18)
-{
-    Console.WriteLine("Niepełnoletni męzczyzna");
+    var counter = 0;
+
+    foreach (char let in letters)
+    {
+        if (num == let)
+        {
+            counter++;
+        }
+    }
+    Console.WriteLine(num + " --> " + counter.ToString());
+
 }

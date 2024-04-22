@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.Metrics;
-
-int number = 1022557;
+﻿int number = 1022557;
 string NumberToString = number.ToString();
 char[] letters = NumberToString.ToArray();
 
@@ -19,6 +17,6 @@ foreach (char num in numbers)
             counter++;
         }
     }
-    Console.WriteLine(num + " --> " + counter.ToString());
+    Console.WriteLine(num + " --> " + counter);
 
 }

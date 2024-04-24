@@ -1,22 +1,42 @@
-﻿int number = 1022557;
-string NumberToString = number.ToString();
-char[] letters = NumberToString.ToArray();
+﻿
+Employee e1 = new Employee("Anna","Kibol","32");
+Employee e2 = new Employee("Jan","Zaraza","20");
+Employee e3 = new Employee("Ola","Molenda","56");
 
-char[] numbers = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+e1.AddGrade(10);
+e1.AddGrade(10);
+e1.AddGrade(8);
+e1.AddGrade(10);
+e1.AddGrade(2);
 
-Console.WriteLine("Wyniki dla liczby " + NumberToString);
+e2.AddGrade(3);
+e2.AddGrade(10);
+e2.AddGrade(9);
+e2.AddGrade(7);
+e2.AddGrade(2);
 
-foreach (char num in numbers)
+e3.AddGrade(1);
+e3.AddGrade(1);
+e3.AddGrade(3);
+e3.AddGrade(5);
+e3.AddGrade(10);
+
+List<Employee> employees = new List<Employee>()
 {
-    var counter = 0;
+    e1, e2, e3
+};
 
-    foreach (char let in letters)
+var MaxScore = -1;
+Employee BestEmployee = null;
+
+foreach (var e in employees)
+{
+    if (e.FinalScore() > MaxScore)
     {
-        if (num == let)
-        {
-            counter++;
-        }
+        MaxScore = e.FinalScore();
+        BestEmployee = e;
     }
-    Console.WriteLine(num + " --> " + counter);
 
 }
+
+Console.WriteLine("Najlepszy wynik uzyskał/a " + BestEmployee.Name + " " + BestEmployee.Surname + ", lat " + BestEmployee.Age + ". Zdobył on az "+ MaxScore + " punktów!!!");

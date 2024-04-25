@@ -10,6 +10,6 @@ public class Tests
 
         int result = var1 + var2;
 
-        Assert.AreEqual(5,result);
+        Assert.AreEqual(3,result);
     }
 }

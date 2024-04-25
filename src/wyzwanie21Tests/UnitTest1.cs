@@ -2,14 +2,14 @@ namespace wyzwanie21Tests;
 
 public class Tests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
     public void Test1()
     {
-        Assert.Pass();
+        int var1 = 1;
+        int var2 = 2;
+
+        int result = var1 + var2;
+
+        Assert.AreEqual(5,result);
     }
 }

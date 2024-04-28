@@ -1,5 +1,5 @@
 
-class Employee
+public class Employee
 {
     public Employee(string name, string surname, string age)
     {
@@ -16,13 +16,13 @@ class Employee
 
     public void AddGrade(int grade)
     {
-        if (grade > 0 && grade < 11)
+        if (grade > -11 && grade < 11)
         {
             this.grade.Add(grade);
         }
         else
         {
-            Console.WriteLine("Wpisz ocenę z zakresu 1-10!");
+            Console.WriteLine("Wpisz ocenę z zakresu od -10 do 10!");
         }
     }
 

@@ -1,24 +1,22 @@
 
 public class Employee
 {
-    public Employee(string name, string surname, string age)
+    public Employee(string name, string surname)
     {
         this.Name = name;
         this.Surname = surname;
-        this.Age = age;
     }
 
     public string Name { get; }
     public string Surname { get; }
-    public string Age { get; }
 
-    private List<int> grade = new List<int>();
+    private List<int> grades = new List<int>();
 
     public void AddGrade(int grade)
     {
         if (grade > -11 && grade < 11)
         {
-            this.grade.Add(grade);
+            this.grades.Add(grade);
         }
         else
         {
@@ -28,7 +26,25 @@ public class Employee
 
     public int FinalScore()
     {
-        return grade.Sum();
+        return grades.Sum();
+    }
+
+    public Statistics GetStatistics()
+    {
+        var statistics = new Statistics();
+        statistics.Average = 0;
+        statistics.Max = float.MinValue;
+        statistics.Min = float.MaxValue;
+
+        foreach (var grade in this.grades)
+        {
+            statistics.Max = Math.Max(statistics.Max, grade);
+            statistics.Min = Math.Min(statistics.Min, grade);
+            statistics.Average += grade;
+        }
+
+        statistics.Average /= this.grades.Count;
+        return statistics;
     }
 
 

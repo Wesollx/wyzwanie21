@@ -7,8 +7,8 @@ public class TypeTests
     public void GetEmployeeShouldReturnDifferentObjects()
     {
         //arrange
-        var employee1 = GetEmployee("Adam","Zachwieja","20");
-        var employee2 = GetEmployee("Adam","Zachwieja","20");
+        var employee1 = GetEmployee("Adam","Zachwieja");
+        var employee2 = GetEmployee("Adam","Zachwieja");
 
         //act
         
@@ -58,8 +58,8 @@ public class TypeTests
 
 
     
-    private Employee GetEmployee(string name, string surname, string age)
+    private Employee GetEmployee(string name, string surname)
     {
-        return new Employee(name, surname, age);
+        return new Employee(name, surname);
     }
 }

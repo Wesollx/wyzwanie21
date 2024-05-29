@@ -10,21 +10,45 @@ public class Employee
     public string Name { get; }
     public string Surname { get; }
 
-    private List<int> grades = new List<int>();
+    private List<float> grades = new List<float>();
 
-    public void AddGrade(int grade)
+    public void AddGrade(float grade)
     {
-        if (grade > -11 && grade < 11)
+        if (grade >= 0 && grade <= 100)
         {
             this.grades.Add(grade);
         }
         else
         {
-            Console.WriteLine("Wpisz ocenę z zakresu od -10 do 10!");
+            Console.WriteLine("Grade out of range");
+        }
+    }
+    
+    public void AddGrade(string grade)
+    {
+        if (float.TryParse(grade, out float result))
+        {
+            this.AddGrade(result);
+        }
+        else
+        {
+            Console.WriteLine("String is not float");
         }
     }
 
-    public int FinalScore()
+    public void AddGrade(long grade)
+    {
+        var result = (float)grade;
+        this.AddGrade(result);
+    }
+
+    public void AddGrade(double grade)
+    {
+       var result = (float)grade;
+       this.AddGrade(result);
+    }
+
+    public float FinalScore()
     {
         return grades.Sum();
     }

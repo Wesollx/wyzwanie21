@@ -36,6 +36,12 @@ public class Employee
         }
     }
 
+    public void AddGrade(int grade)
+    {
+        float result = grade;
+        this.AddGrade(result);
+    }
+
     public void AddGrade(long grade)
     {
         var result = (float)grade;

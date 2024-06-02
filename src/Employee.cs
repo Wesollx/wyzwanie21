@@ -1,14 +1,13 @@
-public class Employee
+public class Employee : Person
 {
     
-    public Employee(string name, string surname)
-    {
-        this.Name = name;
-        this.Surname = surname;
-    }
+    public Employee(string name, string surname, char sex) 
+    : base(name, surname, sex)
+    {}
 
-    public string Name { get; }
-    public string Surname { get; }
+    public Employee() : this("no name", "no surname", 'X')
+    {}
+
 
     private List<float> grades = new List<float>();
 

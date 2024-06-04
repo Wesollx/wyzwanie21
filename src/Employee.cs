@@ -1,13 +1,19 @@
-public class Employee : Person
+public class Employee : IEmployee
 {
     
     public Employee(string name, string surname, char sex) 
-    : base(name, surname, sex)
-    {}
+    {
+        this.Name = name;
+        this.Surname = surname;
+        this.Sex = sex;
+    }
 
     public Employee() : this("no name", "no surname", 'X')
     {}
 
+    public string Name { get; private set; }
+    public string Surname { get; private set; }
+    public char Sex { get; private set;}
 
     private List<float> grades = new List<float>();
 

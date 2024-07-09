@@ -4,7 +4,7 @@ Console.WriteLine("========================================");
 Console.WriteLine();
 
 var employee = new EmployeeInFile("Jan", "Dzban");
-employee.AddGrade("3.5f");
+employee.AddGrade("20");
 //employee.AddGrade("55.5");
 employee.AddGrade('B');
 var statistics = employee.GetStatistics();
